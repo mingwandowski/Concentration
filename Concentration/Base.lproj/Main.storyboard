@@ -186,7 +186,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Irl-kZ-0T3"/>
+                                    <action selector="clickNewGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Irl-kZ-0T3"/>
                                 </connections>
                             </button>
                         </subviews>

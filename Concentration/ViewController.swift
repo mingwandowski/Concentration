@@ -10,13 +10,42 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let themes: [String] = ["Halloween", "Flags", "Faces", "Sports", "Animals", "Fruits", "Appliances"]
+    
+    let emojis: [String: [String]] = [
+        "Halloween":    ["😱", "🦇", "🎃", "👻", "🍭", "😈", "🙀", "🍎"],
+        "Flags":        ["🇧🇷", "🇧🇪", "🇯🇵", "🇨🇦", "🇺🇸", "🇵🇪", "🇮🇪", "🇦🇷"],
+        "Faces":        ["😀", "🙄", "😡", "🤢", "🤡", "😱", "😍", "🤠"],
+        "Sports":       ["🏌️", "🤼‍♂️", "🥋", "🏹", "🥊", "🏊", "🤾🏿‍♂️", "🏇🏿"],
+        "Animals":      ["🦊", "🐼", "🦁", "🐘", "🐓", "🦀", "🐷", "🦉"],
+        "Fruits":       ["🥑", "🍍", "🍆", "🍠", "🍉", "🍇", "🥝", "🍒"],
+        "Appliances":   ["💻", "🖥", "⌚️", "☎️", "🖨", "🖱", "📱", "⌨️"]
+    ]
+    
+    var theme = "Halloween"
+    
+    var emojiChoices = [String]()
+    
+    private var emoji = [Int: String]()
+    
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
         return (cardButtons.count + 1) / 2
     }
     
-    @IBAction func newGame(_ sender: UIButton) {
+    override func viewDidLoad() {
+        newGame()
+    }
+    
+    @IBAction func clickNewGameButton(_ sender: UIButton) {
+        newGame()
+    }
+    
+    func newGame() {
+        theme = themes[themes.count.arc4random]
+        emojiChoices = emojis[theme]!
+        emoji.removeAll()
         game.newGame()
         updateViewFromModule()
     }
@@ -49,15 +78,14 @@ class ViewController: UIViewController {
         }
     }
     
-    private var emojiChoices = ["😱", "🦇", "🎃", "👻", "🍭", "🍬", "😈", "🙀", "🍎"]
-    
-    private var emoji = [Int: String]()
+//    private var emojiChoices = ["😱", "🦇", "🎃", "👻", "🍭", "🍬", "😈", "🙀", "🍎"]
     
     private func emoji(for card: Card) -> String {
         if emojiChoices.count > 0, emoji[card.identifier] == nil {
             emoji[card.identifier] = emojiChoices.remove(at: emojiChoices.count.arc4random)
         }
         return emoji[card.identifier] ?? "?"
+        
         /* same as:
          if emoji[card.identifier] != nil {
              return emoji[card.identifier]!
