@@ -41,12 +41,13 @@ class Concentration {
             cards[index].isFaceUp = false
             cards[index].isMatched = false
         }
+        cards.shuffle()
     }
     
     func chooseCard(at index: Int) {
-        flipCount += 1
         assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)): chosen index not in the cards")
         if !cards[index].isMatched {
+            flipCount += 1
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 // check if cards match
                 if cards[matchIndex].identifier == cards[index].identifier {
