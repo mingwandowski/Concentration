@@ -16,7 +16,12 @@ class ViewController: UIViewController {
         return (cardButtons.count + 1) / 2
     }
     
-    private(set) var flipCount = 0 { didSet { flipCountLabel.text = "Flips: \(flipCount)" } }
+    private(set) var flipCount = 0
+    {
+        didSet {
+            flipCountLabel.text = "Flips: \(flipCount)"
+        }
+    }
     
     @IBOutlet private weak var flipCountLabel: UILabel!
     
