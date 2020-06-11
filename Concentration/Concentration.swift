@@ -39,6 +39,7 @@ class Concentration {
         flipCount = 0
         for index in cards.indices {
             cards[index].isFaceUp = false
+            cards[index].isMatched = false
         }
     }
     
