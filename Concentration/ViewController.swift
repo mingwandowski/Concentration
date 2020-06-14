@@ -11,11 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     // Fields
-    let themes: [String] = ["Halloween", "Flags", "Faces", "Sports", "Animals", "Fruits", "Appliances"]
+    private let themes: [String] = ["Halloween", "Flags", "Faces", "Sports", "Animals", "Fruits", "Appliances"]
     
-    var theme = "Halloween"
-    
-    let emojis: [String: [String]] = [
+    private let emojis: [String: [String]] = [
         "Halloween":    ["😱", "🦇", "🎃", "👻", "🍭", "😈", "🙀", "🍎"],
         "Flags":        ["🇧🇷", "🇧🇪", "🇯🇵", "🇨🇦", "🇺🇸", "🇵🇪", "🇮🇪", "🇦🇷"],
         "Faces":        ["😀", "🙄", "😡", "🤢", "🤡", "😱", "😍", "🤠"],
@@ -25,7 +23,7 @@ class ViewController: UIViewController {
         "Appliances":   ["💻", "🖥", "⌚️", "☎️", "🖨", "🖱", "📱", "⌨️"]
     ]
     
-    var emojiChoices = [String]()
+    private var emojiChoices = [String]()
     
     private var emoji = [Int: String]()
     
@@ -55,13 +53,15 @@ class ViewController: UIViewController {
     }
     
     // Outlets
+    @IBOutlet private weak var scoreLabel: UILabel!
+    
     @IBOutlet private weak var flipCountLabel: UILabel!
     
     @IBOutlet private var cardButtons: [UIButton]!
     
     // Functions
     func newGame() {
-        theme = themes[themes.count.arc4random]
+        let theme = themes[themes.count.arc4random]
         emojiChoices = emojis[theme]!
         emoji.removeAll()
         game.newGame()
@@ -70,6 +70,7 @@ class ViewController: UIViewController {
     
     private func updateViewFromModule() {
         flipCountLabel.text = "Flips: \(game.flipCount)"
+        scoreLabel.text = "Score: \(game.score)"
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]

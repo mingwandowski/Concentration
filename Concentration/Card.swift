@@ -10,9 +10,10 @@ import Foundation
 
 struct Card {
     
-    var isFaceUp = false;
-    var isMatched = false;
+    var isFaceUp = false
+    var isMatched = false
     var identifier: Int
+    var flippedOnce = false
     
     private static var identifierFactory = 0
     
