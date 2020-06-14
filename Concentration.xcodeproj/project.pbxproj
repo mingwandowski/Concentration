@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F229AC42492CF0E00B40778 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F229AC32492CF0E00B40778 /* Extensions.swift */; };
 		2FFECDBB248D5BBD003FE44A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFECDBA248D5BBD003FE44A /* AppDelegate.swift */; };
 		2FFECDBD248D5BBD003FE44A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFECDBC248D5BBD003FE44A /* SceneDelegate.swift */; };
 		2FFECDBF248D5BBD003FE44A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFECDBE248D5BBD003FE44A /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F229AC32492CF0E00B40778 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2FFECDB7248D5BBD003FE44A /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFECDBA248D5BBD003FE44A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FFECDBC248D5BBD003FE44A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		2FFECDB9248D5BBD003FE44A /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
+				2F229AC32492CF0E00B40778 /* Extensions.swift */,
 				2FFECDCE248D5CBB003FE44A /* Supporting Files */,
 				2FFECDBE248D5BBD003FE44A /* ViewController.swift */,
 				2FFECDC0248D5BBD003FE44A /* Main.storyboard */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FFECDBF248D5BBD003FE44A /* ViewController.swift in Sources */,
+				2F229AC42492CF0E00B40778 /* Extensions.swift in Sources */,
 				2FFECDD1248DBA48003FE44A /* Concentration.swift in Sources */,
 				2FFECDD3248DBD90003FE44A /* Card.swift in Sources */,
 				2FFECDBB248D5BBD003FE44A /* AppDelegate.swift in Sources */,
